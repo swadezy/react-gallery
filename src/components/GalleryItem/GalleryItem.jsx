@@ -1,13 +1,18 @@
 import './GalleryItem.css';
 import { useState } from 'react';
 
-function GalleryItem({ picture, likeUpdate }) {
+function GalleryItem({ picture, likeUpdate, deleteItem }) {
     console.log('in GalleryItem');
 
     const [descToggle, setDescToggle] = useState(true)
 
     const handleLikeClick = () => {
         likeUpdate(picture.id)
+    }
+
+    const handleDeleteClick = () => {
+        console.log('clicked delete');
+        deleteItem(picture.id)
     }
 
     const toggleImg = () => {
@@ -23,6 +28,7 @@ function GalleryItem({ picture, likeUpdate }) {
             }
             <br></br>
             <button onClick={handleLikeClick} className="button">Like</button>
+            <button onClick={handleDeleteClick} className="deleteButton">Delete</button>
             <p>{picture.likes} people like this</p>
         </div>
     )

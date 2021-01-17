@@ -1,8 +1,21 @@
-function GalleryList() {
-    console.log('in GalleryList');
+import GalleryItem from '../GalleryItem/GalleryItem.jsx'
+
+function GalleryList({ gallery }) {
+    console.log('in GalleryList, received', gallery);
 
     return (
-        <p>in GalleryList</p>
+        <div className="galleryList">
+            {gallery.map((picture) => (
+                <GalleryItem
+                    id={picture.id}
+                    path={picture.path}
+                    description={picture.description}
+                    likes={picture.likes}
+                />
+            ))}
+
+
+        </div>
     )
 }
 

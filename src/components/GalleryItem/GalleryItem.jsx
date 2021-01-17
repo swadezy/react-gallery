@@ -1,8 +1,14 @@
-function GalleryItem() {
+import './GalleryItem.css';
+
+function GalleryItem({ id, path, description, likes }) {
     console.log('in GalleryItem');
 
     return (
-        <p>in GalleryItem</p>
+        
+
+
+
+        <img className="image" src={path} />
     )
 }
 

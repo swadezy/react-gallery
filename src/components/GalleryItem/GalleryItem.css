@@ -8,14 +8,24 @@
 .description {
     height: 200px;
     width: 200px;
-    background-color: darkslategray;
+    background-color: rgb(44, 44, 44);
     color: white;
     align-items: center;
     display: flex;
 }
 
+.button {
+    color: antiquewhite;
+    background-color: darkslategray;
+    margin: 3px;
+    height: 40px;
+    width: 60px;
+    border-radius: 8px;
+    outline: none;
+}
+
 .fullPost {
-    height: 280px;
+    height: 300px;
     width: 200px;
     margin: 10px;
     padding: 20px;

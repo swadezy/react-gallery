@@ -22,7 +22,7 @@ function GalleryItem({ picture, likeUpdate }) {
                 <div onClick={toggleImg} className="description">{picture.description}</div>
             }
             <br></br>
-            <button onClick={handleLikeClick}>Like</button>
+            <button onClick={handleLikeClick} className="button">Like</button>
             <p>{picture.likes} people like this</p>
         </div>
     )

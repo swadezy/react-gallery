@@ -17,6 +17,15 @@ function App() {
       .catch((error) => console.log(error));
   }
 
+  const likeUpdate = (id) => {
+    axios.put(`/gallery/like/${id}`)
+      .then((response) => {
+        getGallery()
+      }).catch((error) => {
+        console.log(error);
+      })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +33,7 @@ function App() {
       </header>
       <GalleryList
         gallery={gallery}
-        setGallery={setGallery}
+        likeUpdate={likeUpdate}
       />
     </div>
   );

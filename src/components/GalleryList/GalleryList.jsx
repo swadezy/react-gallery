@@ -1,7 +1,7 @@
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 
-function GalleryList({ gallery, setGallery }) {
-    console.log('in GalleryList, received', gallery);
+function GalleryList({ gallery, likeUpdate }) {
+    console.log('in GalleryList');
 
     return (
         <div className="galleryList">
@@ -9,8 +9,7 @@ function GalleryList({ gallery, setGallery }) {
                 <GalleryItem
                     key={picture.id}
                     picture={picture}
-                    gallery={gallery}
-                    setGallery={setGallery}
+                    likeUpdate={likeUpdate}
                 />
             ))}
         </div>

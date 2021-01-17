@@ -1,17 +1,22 @@
 import './GalleryItem.css';
+import {useState} from 'react';
 
-function GalleryItem({ picture, gallery, setGallery }) {
+function GalleryItem({ picture, likeUpdate }) {
     console.log('in GalleryItem');
 
+    const [descToggle, setDescToggle] = useState(false)
+
     const handleLikeClick = () => {
-        gallery[picture.id-1].likes ++
-        console.log(gallery[picture.id-1].likes, 'people now like this');
-        setGallery(gallery)
+        likeUpdate(picture.id)
+      }
+
+      const toggleImg = () => {
+          console.log('clicked the img');
       }
 
     return (
         <div>
-            <img className="image" src={picture.path} />
+            <img onClick={toggleImg} className="image" src={picture.path} />
             <br></br>
             <button onClick={handleLikeClick}>Like</button>
             <p>{picture.likes} people like this</p>

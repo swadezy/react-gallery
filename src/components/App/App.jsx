@@ -24,6 +24,7 @@ function App() {
       </header>
       <GalleryList
         gallery={gallery}
+        setGallery={setGallery}
       />
     </div>
   );

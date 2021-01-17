@@ -26,11 +26,21 @@ function App() {
       })
   }
 
+  const deleteItem = (id) => {
+    axios.delete(`/gallery/delete/${id}`)
+      .then((response) => {
+        getGallery()
+      }).catch((error) => {
+        console.log(error);
+      })
+  }
+
   return (
     <div className="App">
       <GalleryList
         gallery={gallery}
         likeUpdate={likeUpdate}
+        deleteItem={deleteItem}
       />
     </div>
   );

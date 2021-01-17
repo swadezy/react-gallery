@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
@@ -9,8 +10,8 @@ const pool = require('../modules/pool.js')
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
-    for(const galleryItem of galleryItems) {
-        if(galleryItem.id == galleryId) {
+    for (const galleryItem of galleryItems) {
+        if (galleryItem.id == galleryId) {
             galleryItem.likes += 1;
             const queryText = `UPDATE "gallery" SET likes = $1 WHERE id = $2;`
             pool.query(queryText, [galleryItem.likes, galleryId]).then((response) => {
@@ -23,6 +24,20 @@ router.put('/like/:id', (req, res) => {
         }
     }
 }); // END PUT Route
+
+router.delete('/delete/:id', (req, res) => {
+    console.log(req.params);
+    const galleryId = req.params.id;
+    const queryText = `DELETE FROM "gallery" WHERE id = $1;`
+    pool.query(queryText, [galleryId]).then((response) => {
+        console.log('deleted');
+        res.sendStatus(204)
+    }).catch((error) => {
+        console.log('received error', error);
+        res.sendStatus(500)
+    })
+})
+// END DELETE Route
 
 // GET Route
 router.get('/', (req, res) => {

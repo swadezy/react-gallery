@@ -1,9 +1,3 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+For this project, I was tasked with creating a 'gallery of my life'. This gallery features photos that can be clicked to toggle a details view for each photo, as well as a 'like' button that increments likes, and a delete button that deletes that photo. This info is all stored in a database, details of which can be found in the database.sql file. To set this project up, create a database with that database.sql code, run npm install in the project, npm run server, and npm run client.
